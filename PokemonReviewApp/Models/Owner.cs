@@ -6,5 +6,6 @@
         public string Name { get; set; }
         public string Gym { get; set; }
         public Country Country { get; set; } // An Owner Belongs to a Country
+        public ICollection<PokemonOwner> PokemonOwners { get; set; }
     }
 }
