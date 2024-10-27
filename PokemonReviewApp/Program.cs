@@ -1,10 +1,14 @@
 using Microsoft.EntityFrameworkCore;
 using PokemonReviewApp;
 using PokemonReviewApp.Data;
+using PokemonReviewApp.Interfaces;
+using PokemonReviewApp.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+//====== Add services to the container.
+// that means i shuld point that im using dependency injection
+builder.Services.AddScoped<IPokemonRepository, PokemonRepository>();
 
 builder.Services.AddControllers();
 builder.Services.AddTransient<Seed>();
